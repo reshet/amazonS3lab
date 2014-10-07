@@ -22,7 +22,6 @@ Scope = ScopeDate + "/us-west-2/s3/aws4_request"
 Payload = ""
 PayloadHash = hashlib.sha256(Payload).hexdigest()
 SignedHeaders = "host;x-amz-date"
-Date = "20141002T102700Z"
 CanonicalRequest = "GET" + "\n" + "/" +"\n" + RequestParameters + "\n" + "host:" + Host + "\n" + "x-amz-date:" + Date + "\n\n" + SignedHeaders + "\n" + PayloadHash
 CanonicalRequestHash = hashlib.sha256(CanonicalRequest).hexdigest()
 StringToSign = "AWS4-HMAC-SHA256" + "\n" + Date + "\n" + Scope + "\n" + CanonicalRequestHash
